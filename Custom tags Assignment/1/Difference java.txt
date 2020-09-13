@@ -1,0 +1,34 @@
+package diff;
+
+import java.io.IOException;
+
+import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.tagext.SimpleTagSupport;
+
+public class Difference extends SimpleTagSupport {
+	private int one;
+	private int two;
+	
+	public void doTag()throws JspException,IOException
+	{
+		getJspContext().getOut().print(one-two);
+	}
+
+	public void setOne(int one) {
+		this.one = one;
+	}
+	public int getOne() {
+		return one;
+	}
+
+	public void setTwo(int two) {
+		this.two = two;
+	}
+
+
+	public int getTwo() {
+		return two;
+	}
+
+	
+}

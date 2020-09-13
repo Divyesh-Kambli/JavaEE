@@ -1,0 +1,13 @@
+package diff;
+
+public class CareerInfo {
+	public String getAdvice(String qualification)
+	{
+	if(qualification.equalsIgnoreCase("be"))
+		return "DAC course";
+	else if(qualification.equalsIgnoreCase("me"))
+		return "DBDA course";
+	return "Please enter valid Qualification";
+	
+	}
+}

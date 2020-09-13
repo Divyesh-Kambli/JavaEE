@@ -1,0 +1,17 @@
+package diff;
+
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+import javax.servlet.jsp.tagext.SimpleTagSupport;
+
+public class TimeToday extends SimpleTagSupport {
+	public void doTag() throws IOException
+	{
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
+		   LocalDateTime now = LocalDateTime.now();  
+		getJspContext().getOut().print(dtf.format(now));
+	}
+
+}

@@ -1,0 +1,10 @@
+<tag>
+		<name>convert</name>
+		<tag-class>diff.Toggle</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>val</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		</tag>

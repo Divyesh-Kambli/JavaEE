@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="CartServ" method="post">
+ <input type="checkbox" id="shoes" name="shoes" value="shoes">
+<label for="shoes"> Shoes</label><br>
+<input type="checkbox" id="coke" name="coke" value="coke">
+<label for="Coke">Coke</label><br>
+<input type="checkbox" id="watch" name="watch" value="Watch">
+<label for="Watch"> Watch</label><br> 
+<input type="submit">
+</form>
+</body>
+</html>

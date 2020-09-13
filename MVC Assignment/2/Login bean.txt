@@ -1,0 +1,12 @@
+package diff;
+
+public class LoginBean {
+public boolean validate(String name,String password)
+{
+	if(name.equals("scott")&&password.equals("tiger"))
+	{
+		return true;
+	}
+	return false;
+}
+}

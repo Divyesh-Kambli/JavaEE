@@ -1,0 +1,13 @@
+<%@taglib prefix="abc" uri="/WEB-INF/diff.tld"%>
+
+
+
+Before tag starts
+<br><b>
+<abc:diff one="300" two="135"/>
+</b><br>
+After tag
+<br>
+
+
+
