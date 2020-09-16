@@ -1,0 +1,6 @@
+package Mypack;
+
+public interface StudentDAO {
+	public void addStudent(Student s);
+	
+}

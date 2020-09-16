@@ -1,0 +1,48 @@
+
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+
+import Mypack.HibernateUtil;
+import Mypack.Product;
+import Mypack.Register;
+
+/**
+ * Servlet implementation class ViewServlet
+ */
+public class ViewServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		Session session = HibernateUtil.getSessionFactory().openSession(); 
+     
+		try
+		{
+			Query<?> query=session.createQuery("from Product");
+			List<Product> list=(List<Product>) query.list();
+			
+			RequestDispatcher rd=request.getRequestDispatcher("View.jsp");
+			request.setAttribute("Details",list);
+			rd.forward(request, response);
+		}
+		catch(Exception ee)
+		{
+			ee.printStackTrace();
+		}
+	}
+
+}

@@ -1,0 +1,26 @@
+package Mypack;
+
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+
+public class StudentDAOFileImpl implements StudentDAO {
+
+	@Override
+	public void addStudent(Student s) {
+		// TODO Auto-generated method stub
+		try
+		{
+			FileOutputStream fos=new FileOutputStream("file.txt");
+			ObjectOutputStream oos=new ObjectOutputStream(fos);
+			oos.writeObject(s);
+		}
+		catch(Exception ee)
+		{
+			ee.printStackTrace();
+		}
+		
+	}
+
+	
+
+}

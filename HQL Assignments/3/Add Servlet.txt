@@ -1,0 +1,63 @@
+
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import Mypack.HibernateUtil;
+import Mypack.Product;
+import Mypack.Student;
+import Mypack.StudentDAO;
+import Mypack.StudentDAODataImpl;
+import Mypack.StudentDAOFileImpl;
+
+/**
+ * Servlet implementation class AddServ
+ */
+public class AddServ extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	StudentDAO sdao;
+	int rollno; 
+	String name;
+	String address;
+	String writes;
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		rollno=Integer.parseInt(request.getParameter("rollno"));
+		name=request.getParameter("name");
+		address=request.getParameter("address");
+		writes=request.getParameter("writing");
+		
+		Student s=new Student();
+		s.setRollno(rollno);
+s.setName(name);
+s.setAddress(address);
+
+if(writes.equals("file"))
+{
+	sdao=new StudentDAOFileImpl();
+	sdao.addStudent(s);
+	System.out.println("written to file");
+}	
+	
+if(writes.equals("database"))
+{
+	sdao=new StudentDAODataImpl();
+			sdao.addStudent(s);
+			System.out.println("written to database");
+}		
+	}
+
+}
